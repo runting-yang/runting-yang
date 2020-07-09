@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #header {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+            padding: 5px;
+        }
+        #footer {
+            background-color:darkblue;
+            color:white;
+            clear:both;
+            text-align:right;
+            padding:5px;	 	 
+        }
+        #nav {
+            background-color:#eeeeee;
+            line-height:30px;
+            height:450px;
+            width:120px;
+            float:left;
+            padding:5px;	      
+        }
+        .div-c{ 
+            text-align: center;
+            float:left;
+            width:50%;
+        } 
+        .div-d{ 
+            text-align: center;
+            float:right;
+            width:50%;
+        }
+    </style>
+</head>
+
+<body background="/templates/background0.jpg">
+    <div id="header">
+        <h1>基于YOLO的COVID-19 CT图像检测</h1>
+    </div>
+   
+    <div class="div-c">
+        <h2>输入图像</h2>
+        <img src={{imgPath}} width="304" height="228">
+        <form action='/upload' method='post' enctype='multipart/form-data'>
+            <input type='file' name='file'>
+            <input type='submit' value='Upload'>
+        </form>
+    </div>
+    <div class="div-d">
+        <h2>预测结果</h2>
+        <img src={{result}} width="304" height="228">
+        <h4>{{CT_result}}置信度：{{CT_probability}}</h4>
+    </div>
+
+    <!--<div style="width:100%; text-align:center">
+       <div align="center">
+         <h2>基于YOLO的COVID-19 CT图像检测 DEMO</h2>
+       </div>
+       <div align="center">
+         <img src={{imgPath}}  width="304" height="228">
+       </div>
+       <div>
+         <form action='/upload' method='post' enctype='multipart/form-data'>
+           <input type='file' name='file'>
+           <input type='submit' value='Upload'>
+         </form>
+       </div>
+       <h2 align="center"> 本次预测的结果是： </h2>
+       <h4>{{CT_result}}</h4>
+       <div align="center">
+         <img src={{result}} width="304" height="228">
+       </div>
+    </div>-->
+
+    <div id="footer">
+        Beijing Institute of Technology
+    </div>
+</body>
+</html>
